@@ -1,0 +1,10 @@
+console.log("test 1");
+Ti.App.addEventListener("swipe", function(e) {
+	/*if (e.hasSlided) {
+		$.timap.touchEnabled = false;
+	}
+	else {
+		$.timap.touchEnabled = true;
+	}**/
+	console.log("test 2");
+});

@@ -1,0 +1,13 @@
+<Alloy>
+	<Window id="mainWindow" class="container">
+		<Toolbar bottom="0">
+		    <Items>
+		        <Button id="menu" title="Menu" onClick="menuClick"/>
+		    </Items>
+		</Toolbar>
+		<Require type="widget" src="com.mcongrove.slideMenu" id="SlideMenu"/>
+		<View id="AppWrapper">
+            <!-- Content Goes Here -->
+        </View>
+	</Window>
+</Alloy>

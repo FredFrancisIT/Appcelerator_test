@@ -1,0 +1,4 @@
+// Handle the click event on a node
+function doClick(e){
+    Titanium.API.info("You clicked the button");
+};

@@ -1,0 +1,56 @@
+Logger started at: mardi 14 juillet 2015 16 h 22 CEST
+Component: com.appcelerator.titanium.android.core
+Version: 1.0.0.1436205556
+[24:6.536] Sent: >21*1436883846534*version<
+[24:6.539] Recv: >1436883846534*1*3.0.0.1407437730<
+[24:6.540] Sent: >36*1436883846535*option*monitorXHR*true<
+[24:6.542] Recv: >1436883846535*!unknown option <monitorXHR><
+[24:6.542] Sent: >45*1436883846536*option*suspendOnFirstLine*false<
+[24:6.542] Recv: >1436883846536<
+[24:6.542] Sent: >46*1436883846537*option*suspendOnExceptions*false<
+[24:6.592] Recv: >1436883846537<
+[24:6.592] Sent: >41*1436883846538*option*suspendOnErrors*true<
+[24:6.706] Recv: >1436883846538<
+[24:6.706] Sent: >43*1436883846539*option*suspendOnKeywords*true<
+[24:6.706] Recv: >1436883846539<
+[24:6.706] Sent: >45*1436883846540*option*bypassConstructors*false<
+[24:6.706] Recv: >1436883846540*!unknown option <bypassConstructors><
+[24:6.706] Sent: >45*1436883846541*option*stepFiltersEnabled*false<
+[24:6.707] Recv: >1436883846541*!unknown option <stepFiltersEnabled><
+[24:6.707] Sent: >30*1436883846542*detailFormatters<
+[24:6.711] Recv: >1436883846542<
+[24:6.712] Sent: >20*1436883846543*enable<
+[24:6.713] Recv: >resumed*start<
+[24:6.713] Recv: >1436883846543<
+[24:6.716] Recv: >scripts*created*1|ti:/httpclient.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*2|ti:/properties.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*3|ti:/kroll.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*4|ti:/url.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*5|ti:/console.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*6|ti:/bootstrap.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*7|ti:/tabgroup.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*8|ti:/ui.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*9|ti:/window.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*10|ti:/path.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*11|ti:/webview.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*12|ti:/events.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*13|ti:/network.js|anonymous|1|1<
+[24:6.716] Recv: >scripts*created*14|ti:/module.js|anonymous|1|1<
+[24:6.717] Recv: >scripts*created*15|ti:/listview.js|anonymous|1|1<
+[24:6.717] Recv: >scripts*created*16|ti:/invoker.js|anonymous|1|1<
+[24:6.717] Recv: >scripts*created*17|ti:/titanium.js|anonymous|1|1<
+[24:6.717] Recv: >scripts*created*18|ti:/tab.js|anonymous|1|1<
+[24:6.717] Recv: >scripts*created*19|ti:/view.js|anonymous|1|1<
+[24:6.871] Recv: >scripts*created*20|app:///app.js|anonymous|1|1<
+[24:6.874] Recv: >scripts*created*21|app:///alloy.js|anonymous|1|1<
+[24:6.882] Recv: >scripts*created*22|app:///alloy/underscore.js|anonymous|1|1<
+[24:6.994] Recv: >scripts*created*23|app:///alloy/backbone.js|anonymous|1|1<
+[24:7.133] Recv: >scripts*created*24|app:///alloy/controllers/index.js|anonymous|1|1<
+[24:7.134] Recv: >scripts*created*25|app:///alloy/controllers/BaseController.js|anonymous|1|1<
+[24:7.136] Recv: >scripts*created*26|app:///alloy/widgets/com.mcongrove.slideMenu/controllers/widget.js|anonymous|1|1<
+[24:7.154] Recv: >scripts*created*27|app:///alloy/widget.js|anonymous|1|1<
+[24:7.252] Recv: >scripts*created*28|app:///ti.map/bootstrap.js|anonymous|1|1<
+[24:7.435] Recv: >scripts*created*29|app:///alloy/controllers/view1.js|anonymous|1|1<
+[24:13.752] Recv: >scripts*created*30|app:///alloy/controllers/view3.js|anonymous|1|1<
+[25:54.357] Sent: >10**terminate<
+----------End of file----------

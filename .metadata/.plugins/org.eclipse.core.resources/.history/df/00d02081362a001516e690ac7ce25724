@@ -1,0 +1,4 @@
+// Handle the click event on a node
+function doClick(_event) {
+	console.log("Do click");
+}

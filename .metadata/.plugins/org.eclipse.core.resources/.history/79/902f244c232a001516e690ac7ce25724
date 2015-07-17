@@ -1,0 +1,19 @@
+console.log("test 1");
+var slided = false;
+$.timap.touchEnabled = false;
+$.view3.addEventListener("swipe", function(_event) {
+    if(_event.direction == "right") {
+    	console.log("right");
+        slided = true;
+    } else if(_event.direction == "left") {
+    	console.log("left");
+        slided = false;
+    }
+    if(slided == false){
+    	console.log("touchEnabled");
+    	$.timap.touchEnabled = false;
+    }else{   	
+    	console.log("touchDisabled");
+    	$.timap.touchEnabled = true;
+    }
+});

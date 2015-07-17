@@ -1,0 +1,116 @@
+var leftData = [];
+
+if (OS_IOS || OS_ANDROID) {
+	Alloy.Globals.Map = require('ti.map');
+}
+
+
+// Create our node items
+var nodes = [
+    { menuHeader: "Acceuil", id: 0, title: "Mon CE", image: "/images/ic_search.png" },
+    { id: 1, title: "Calendrier", image: "/images/ic_search.png" },
+    { id: 2, title: "Nous contacter", image: "/images/ic_search.png" }
+];
+
+// Initialize the slide menu
+$.SlideMenu.init({
+    nodes: nodes,
+    color: {
+        headingBackground: "#000",
+        headingText: "#FFF"
+    }
+});
+
+// Set the first node as active
+$.SlideMenu.setIndex(0);
+
+// Add an event listener on the nodes
+$.SlideMenu.Nodes.addEventListener("click", handleMenuClick);
+
+// Handle the click event on a node
+function handleMenuClick(_event) {
+    if(typeof _event.row.id !== "undefined") {
+        // Open the corresponding controller
+        openScreen(_event.row.id);
+    }
+}
+
+// Handle the click event on a node
+function menuClick(_event) {
+	console.log("menuCLick");
+	openMenu();
+};
+
+
+function openScreen(e) {
+		$.AppWrapper.remove(currentView);
+		if(e == "0"){
+			currentView = Alloy.createController("view1").getView();
+		}
+		if(e == "1"){
+			currentView = Alloy.createController("view2").getView();
+		}
+		if(e == "2"){
+			currentView = Alloy.createController("view3").getView();
+		}
+		
+		$.AppWrapper.add(currentView);
+		//currentView = Alloy.createController("view1").getView();
+		//$.AppWrapper.contentview.add(currentView);
+}
+
+function openMenu() {
+    $.AppWrapper.animate({
+        left: "200dp",
+        duration: 200,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+
+    $.SlideMenu.Wrapper.animate({
+        left: "0dp",
+        duration: 200,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+}
+
+function closeMenu() {
+    $.AppWrapper.animate({
+        left: "0dp",
+        duration: 250,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+
+    $.SlideMenu.Wrapper.animate({
+        left: "-200dp",
+        duration: 250,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+}
+
+$.AppWrapper.addEventListener("swipe", function(_event) {
+    if(_event.direction == "right") {
+        openMenu();
+    } else if(_event.direction == "left") {
+        closeMenu();
+    }
+});
+
+var currentView = Alloy.createController("view1").getView();
+/*var view = Titanium.UI.createView({
+   borderRadius:10,
+   backgroundColor:'red',
+   width:50,
+   height:50
+});*/
+$.AppWrapper.add(currentView);
+//$.AppWrapper.contentview.add(currentView);
+
+
+
+if (Ti.Platform.osname === 'iphone')
+	$.mainWindow.open({
+		transition : Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+	});
+else
+	$.mainWindow.open();
+

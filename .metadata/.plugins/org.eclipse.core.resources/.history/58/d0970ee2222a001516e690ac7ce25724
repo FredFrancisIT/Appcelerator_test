@@ -1,0 +1,15 @@
+console.log("test 1");
+var slided = false;
+$.timap.touchEnabled = false;
+$.AppWrapper.addEventListener("swipe", function(_event) {
+    if(_event.direction == "right") {
+        slided = true;
+    } else if(_event.direction == "left") {
+        slided = false;
+    }
+    if(slided == false){
+    	$.timap.touchEnabled = false;
+    }else{
+    	$.timap.touchEnabled = true;
+    }
+});

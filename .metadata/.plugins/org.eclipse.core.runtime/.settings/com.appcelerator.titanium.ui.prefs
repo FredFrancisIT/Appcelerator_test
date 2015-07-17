@@ -1,0 +1,9 @@
+=run
+AlloySliderMenu\:launchMode=run
+AlloySliderMenu\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.9EB574E0-74A5-40BE-8126-87F06AD81971
+LAST_LAUNCH_TIMESTAMP=1437049844524
+TestProject\:launchMode=run
+TestProject\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.7C07F8CE-122F-44D4-9384-C79FC295A2D2
+eclipse.preferences.version=1
+preference.show.console.onError=false
+preference.studio.perspective.version=103

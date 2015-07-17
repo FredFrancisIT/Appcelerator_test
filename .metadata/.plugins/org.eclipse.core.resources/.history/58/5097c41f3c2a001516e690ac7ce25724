@@ -1,0 +1,197 @@
+var leftData = [];
+
+if (OS_IOS || OS_ANDROID) {
+	Alloy.Globals.Map = require('ti.map');
+}
+
+
+// Create our node items
+var nodes = [
+    { menuHeader: "Acceuil", id: 0, title: "Mon CE", image: "/images/ic_search.png" },
+    { id: 1, title: "Calendrier", image: "/images/ic_search.png" },
+    { id: 2, title: "Nous contacter", image: "/images/ic_search.png" }
+];
+
+// Initialize the slide menu
+$.SlideMenu.init({
+    nodes: nodes,
+    color: {
+        headingBackground: "#000",
+        headingText: "#FFF"
+    }
+});
+
+// Set the first node as active
+$.SlideMenu.setIndex(0);
+
+// Add an event listener on the nodes
+$.SlideMenu.Nodes.addEventListener("click", handleMenuClick);
+
+// Handle the click event on a node
+function handleMenuClick(_event) {
+    if(typeof _event.row.id !== "undefined") {
+        // Open the corresponding controller
+        openScreen(_event.row.id);
+    }
+}
+
+// Handle the click event on a node
+function menuClick(_event) {
+	Titanium.API.info("You clicked the button");
+	openMenu();
+};
+
+
+function openScreen(e) {
+		$.AppWrapper.remove(currentView);
+		if(e == "0"){
+			currentView = Alloy.createController("view1").getView();
+		}
+		if(e == "1"){
+			currentView = Alloy.createController("view2").getView();
+		}
+		if(e == "2"){
+			currentView = Alloy.createController("view3").getView();
+		}
+		
+		$.AppWrapper.add(currentView);
+		//currentView = Alloy.createController("view1").getView();
+		//$.AppWrapper.contentview.add(currentView);
+}
+
+function openMenu() {
+    $.AppWrapper.animate({
+        left: "200dp",
+        duration: 200,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+
+    $.SlideMenu.Wrapper.animate({
+        left: "0dp",
+        duration: 200,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+}
+
+function closeMenu() {
+    $.AppWrapper.animate({
+        left: "0dp",
+        duration: 250,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+
+    $.SlideMenu.Wrapper.animate({
+        left: "-200dp",
+        duration: 250,
+        curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+    });
+}
+
+$.AppWrapper.addEventListener("swipe", function(_event) {
+    if(_event.direction == "right") {
+        openMenu();
+    } else if(_event.direction == "left") {
+        closeMenu();
+    }
+});
+
+var currentView = Alloy.createController("view1").getView();
+/*var view = Titanium.UI.createView({
+   borderRadius:10,
+   backgroundColor:'red',
+   width:50,
+   height:50
+});*/
+$.AppWrapper.add(currentView);
+//$.AppWrapper.contentview.add(currentView);
+
+
+
+$.headerbar.setParentContainer($.mainWindow);			// a reference to the window containing the widget
+$.headerbar.setBackground({							// background color of the bar
+	color:'#cacaca'
+});
+//$.headerbar.setAppIcon('/appiconcopy.png'); 		// if no icon is provided, the apps default one will be used
+$.headerbar.setBlackAngle();						// color of the angle
+$.headerbar.setTitle({								// the title of the containing window
+	text:'Window Title',
+	color:'#6f6f6f'
+});
+$.headerbar.setBack(function(){						// if angle is shown, what will happen uppon click.  If don't want the button to do anything, send empty function
+	alert('Clicked home');
+});
+
+$.headerbar.hideBottomLine();						// for Holo Dark
+$.headerbar.showAngle();							// show or hide
+$.headerbar.setActionButtons(getExtraButtons());		// action buttons, inflater buttons and menu buttons
+// End Configuration
+
+
+// For clarity, I'm using a function to get the Buttons Object
+// In a cross-platform scenario you'd want to have your menu options returned
+// by a function so you can then decide where and how display them
+function getExtraButtons(){
+	return {
+		visible:[
+			{
+				icon:'/ic_menu_copy_holo_light.png',
+				title: 'Copy',
+				action: function (){
+					alert('Copy');
+				}
+			},
+			{
+				icon:'/ic_menu_share_holo_light.png',
+				title: 'Share',
+				action: function (){
+					alert('Share');
+				}
+			}],
+		inflater:[
+			{
+				title: 'Some Action #1',
+				action: function (){
+					alert('action1');
+				}
+			},
+			{
+				title: 'Some Action #2',
+				action: function (){
+					alert('action2');
+				}
+			}],
+		androidmenu:[
+			{
+				title: 'Settings',
+				action: function (){
+					alert('Settings');
+				}
+			},
+			{
+				title: 'Help',
+				action: function (){
+					alert('Help');
+				}
+			},
+			{
+				title: 'About',
+				action: function (){
+					alert('About');
+				}
+			}
+		]
+	}
+}
+
+
+
+
+
+
+if (Ti.Platform.osname === 'iphone')
+	$.mainWindow.open({
+		transition : Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+	});
+else
+	$.mainWindow.open();
+
